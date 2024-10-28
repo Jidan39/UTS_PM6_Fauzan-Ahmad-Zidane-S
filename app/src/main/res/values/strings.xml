@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">UcapanKuh</string>
+    <string name="kalimat_input">Masukkan Teks Yang Ingin Anda Tampilkan</string>
+    <string name="button">Buat Kartu</string>
 </resources>
