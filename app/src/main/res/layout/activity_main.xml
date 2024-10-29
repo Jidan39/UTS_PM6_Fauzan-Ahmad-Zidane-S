@@ -153,7 +153,7 @@
         android:backgroundTint="#3489eb"
         android:padding="15sp"
         android:rotationX="5"
-        android:text="@string/button"
+        android:text="@string/button_buat"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
