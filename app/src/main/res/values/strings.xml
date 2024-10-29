@@ -3,4 +3,5 @@
     <string name="kalimat_input">Masukkan Teks Yang Ingin Anda Tampilkan</string>
     <string name="button_buat">Buat Kartu</string>
     <string name="button_download">Download</string>
+    <string name="page_title2">Hasil Kartu</string>
 </resources>

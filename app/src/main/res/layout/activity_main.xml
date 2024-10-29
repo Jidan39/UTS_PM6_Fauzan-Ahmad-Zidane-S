@@ -93,48 +93,56 @@
 
             <!-- Tambahkan ImageView untuk setiap gambar -->
             <ImageView
+                android:id="@+id/asset1"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_marginBottom="40dp"
                 android:src="@drawable/asset1" />
 
             <ImageView
+                android:id="@+id/asset2"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_marginBottom="40dp"
                 android:src="@drawable/asset2" />
 
             <ImageView
+                android:id="@+id/asset3"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_marginBottom="40dp"
                 android:src="@drawable/asset3" />
 
             <ImageView
+                android:id="@+id/asset4"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_marginBottom="40dp"
                 android:src="@drawable/asset4" />
 
             <ImageView
+                android:id="@+id/asset5"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_marginBottom="40dp"
                 android:src="@drawable/asset5" />
 
             <ImageView
+                android:id="@+id/asset6"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_marginBottom="40dp"
                 android:src="@drawable/asset6" />
 
             <ImageView
+                android:id="@+id/asset7"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_marginBottom="40dp"
                 android:src="@drawable/asset7" />
 
             <ImageView
+                android:id="@+id/asset8"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 android:layout_marginBottom="40dp"
