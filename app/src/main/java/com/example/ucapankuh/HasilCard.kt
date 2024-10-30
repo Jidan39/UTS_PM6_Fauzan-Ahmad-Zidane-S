@@ -18,8 +18,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import java.io.File
-import java.io.FileOutputStream
 import java.io.IOException
 
 class HasilCard : AppCompatActivity() {
@@ -47,10 +45,12 @@ class HasilCard : AppCompatActivity() {
             imageViewAsset.setImageResource(assetId)
         }
 
-        // Fungsi untuk kembali ke halaman sebelumnya
+        // Fungsi untuk kembali ke MainActivity
         val backIcon: ImageView = findViewById(R.id.back_icon)
         backIcon.setOnClickListener {
-            onBackPressed()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish() // Menutup aktivitas HasilCard agar tidak kembali ketika menekan tombol back
         }
 
         // Fungsi untuk menyimpan kartu sebagai gambar
@@ -79,7 +79,7 @@ class HasilCard : AppCompatActivity() {
     }
 
     // Fungsi untuk membuat Bitmap dari tampilan
-    private fun getBitmapFromView(view: View): Bitmap? {
+    private fun getBitmapFromView(view: View): Bitmap {
         val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
         view.draw(canvas)
@@ -114,7 +114,7 @@ class HasilCard : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == REQUEST_STORAGE_PERMISSION) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                saveCardImage() // coba simpan gambar jika izin diberikan
+                saveCardImage() // simpan gambar klo izin diberikan
             } else {
                 Toast.makeText(this, "Izin penyimpanan ditolak", Toast.LENGTH_SHORT).show()
             }
