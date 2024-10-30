@@ -12,6 +12,7 @@ import android.provider.MediaStore
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -37,7 +38,7 @@ class HasilCard : AppCompatActivity() {
 
         // Temukan komponen dalam layout
         val textViewUcapan: TextView = findViewById(R.id.textView3)
-        val imageViewAsset: ImageView = findViewById(R.id.card_picture) // Pastikan ID ini sesuai dengan layout
+        val imageViewAsset: ImageView = findViewById(R.id.card_picture)
         val buttonDownload: Button = findViewById(R.id.button_download)
 
         // Set teks dan gambar berdasarkan data yang dikirim dari halaman pertama
@@ -47,7 +48,7 @@ class HasilCard : AppCompatActivity() {
         }
 
         // Fungsi untuk kembali ke halaman sebelumnya
-        val backIcon: ImageView = findViewById(R.id.back_icon) // Pastikan Anda menggunakan ID yang benar untuk back_icon
+        val backIcon: ImageView = findViewById(R.id.back_icon)
         backIcon.setOnClickListener {
             onBackPressed()
         }
@@ -68,7 +69,8 @@ class HasilCard : AppCompatActivity() {
 
     // Fungsi untuk menyimpan gambar ke galeri
     private fun saveCardImage() {
-        val bitmap = getBitmapFromView(findViewById(R.id.main)) // pastikan ID ini sesuai dengan layout Anda
+        val linearLayout = findViewById<LinearLayout>(R.id.kartu_ucapan_hasil) // Mengambil LinearLayout
+        val bitmap = getBitmapFromView(linearLayout) // Mengambil bitmap dari LinearLayout
         if (bitmap != null) {
             saveBitmapToGallery(bitmap)
         } else {
@@ -84,7 +86,7 @@ class HasilCard : AppCompatActivity() {
         return bitmap
     }
 
-    // Fungsi untuk menyimpan gambar ke galeri+
+    // Fungsi untuk menyimpan gambar ke galeri
     private fun saveBitmapToGallery(bitmap: Bitmap) {
         val contentValues = ContentValues().apply {
             put(MediaStore.Images.Media.DISPLAY_NAME, "KartuUcapan_${System.currentTimeMillis()}.png")
@@ -107,7 +109,6 @@ class HasilCard : AppCompatActivity() {
             Toast.makeText(this, "Gagal membuat URI untuk menyimpan gambar", Toast.LENGTH_SHORT).show()
         }
     }
-
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
